@@ -1,4 +1,4 @@
-<a [routerLink]="['/']">Home</a> |  <a [routerLink]="['/question',new_question._id]">Go Back to Question</a>  <a href="/logout">Logout</a>
+<a [routerLink]="['/dashboard']">Home</a> |  <a [routerLink]="['/question',new_question._id]">Go Back to Question</a>  <a href="/logout">Logout</a>
 
 <div><h4>{{new_question.question_content}}</h4></div>
 <div><h5>{{new_question.option1}}</h5></div>
@@ -30,7 +30,7 @@
       #answer_descs='ngModel'
     ></textarea>
     <br>
-    <button [routerLink]="['/']">Cancel</button>
+    <button [routerLink]="['/dashboard']">Cancel</button>
     <input [disabled]="formData.invalid" type="submit" value='Submit'>
   </form>
 </div>

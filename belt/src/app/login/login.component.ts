@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       this._apiService.setUser(res.item_content);
       this.loggedUserName = res.item_content;
       console.log(this.new_item);
-      this.router.navigate(["/"]) /////****** important to put in the callback function so it is called after data load */
+      this.router.navigate(["/dashboard"]) /////****** important to put in the callback function so it is called after data load */
     },() => { //errorback function this is the second parameter of retrieveTasks
       console.log("error something");
     });

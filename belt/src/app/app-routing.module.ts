@@ -7,7 +7,7 @@ import { NewquestionComponent } from "./newquestion/newquestion.component"
 import { VoteComponent } from "./vote/vote.component"
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', component: DashboardComponent },
+  { path: '', pathMatch: 'full', redirectTo: '/login' },
   { path: 'dashboard', pathMatch: 'full', component: DashboardComponent },
   { path: 'question/:id/new_answer', component: UpdateComponent },
   { path: 'create', component: DashboardComponent },

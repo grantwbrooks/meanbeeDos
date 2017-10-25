@@ -25,7 +25,7 @@ export class NewquestionComponent implements OnInit {
     console.log("before this note",this.new_question);
     
     this._apiService.createSub(this.new_question, (res) => {
-      this.router.navigate(["/"]);
+      this.router.navigate(["/dashboard"]);
       console.log("in on submit callback",this.new_question);
     },() => {
       console.log("error something");

@@ -43,7 +43,7 @@ export class UpdateComponent implements OnInit {
   onAnswerSubmit() {
     this.new_question.answers.push(this.new_answer);
     this._apiService.updateQuestion(this.question_id, this.new_question, (res) => {
-      this.router.navigate(["/"])
+      this.router.navigate(["/dashboard"])
     },() => {
       console.log("error something")
     });

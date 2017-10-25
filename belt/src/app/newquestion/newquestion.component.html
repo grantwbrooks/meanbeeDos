@@ -1,4 +1,4 @@
-<a [routerLink]="['/']">Home</a>  <a href="/logout">Logout</a>
+<a [routerLink]="['/dashboard']">Home</a>  <a href="/logout">Logout</a>
 
 <div><h5>New Question</h5></div>
 <div>
@@ -27,7 +27,7 @@
       #option1s='ngModel'
     ></textarea>
     <br>
-    <button [routerLink]="['/']">Cancel</button>
+    <button [routerLink]="['/dashboard']">Cancel</button>
     <input [disabled]="formData.invalid" type="submit" value='Submit'>
   </form>
 </div>
