@@ -8,7 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms'; // <-- Import FormsModule
 import { HttpModule } from '@angular/http'; // <-- Import HttpModule
 import { ApiService } from './api.service';
-import { OrderByPipe } from './order-by.pipe';
+import { OrderbyPipe } from './order-by.pipe';
 import { FilterPipe } from './filter.pipe';
 import { UpdateComponent } from './update/update.component';
 import { LoginComponent } from './login/login.component';
@@ -19,7 +19,7 @@ import { NewquestionComponent } from './newquestion/newquestion.component'; // <
   declarations: [
     AppComponent,
     DashboardComponent,
-    OrderByPipe,
+    OrderbyPipe,
     FilterPipe,
     UpdateComponent,
     LoginComponent,

@@ -8,7 +8,7 @@
     <thead>
     </thead>
     <tbody>
-      <tr *ngFor="let answer of new_question.answers | orderBy : count">
+      <tr *ngFor="let answer of new_question.answers | orderby:'count' ">
         <td>{{answer.name}}:<br>
           {{answer.content}}<br>
           {{answer.desc}}

@@ -131,6 +131,7 @@ module.exports = {
                                 // myerrors = err.errors
                                 // res.render('index',{errors: err.errors});
                                 // res.redirect('/');
+                                res.json(err.errors);
                             } 
                             else { 
                                 myerrors = [];

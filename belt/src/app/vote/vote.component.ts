@@ -4,6 +4,7 @@ import { Question } from './../question';
 import { ApiService } from './../api.service';
 import { Router } from "@angular/router";
 import { ActivatedRoute } from '@angular/router';
+import { OrderbyPipe } from './../order-by.pipe';
 
 @Component({
   selector: 'app-vote',
