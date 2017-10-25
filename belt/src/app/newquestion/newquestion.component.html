@@ -1,0 +1,33 @@
+<a [routerLink]="['/']">Home</a>  <a href="/logout">Logout</a>
+
+<div><h5>New Question</h5></div>
+<div>
+  <form (submit)="onQuestionSubmit(); formData.reset()" class="my-form" #formData='ngForm'>
+    <label>Question</label> 
+    <textarea 
+      type="text" 
+      name="question_content" 
+      required 
+      minlength="10" 
+      maxlength="200"
+      [(ngModel)]="new_question.question_content"
+      #question_contents='ngModel'
+    ></textarea>
+    <span *ngIf = 'question_contents.dirty && question_contents.invalid' class="ng-invalid">
+      <span *ngIf = "question_contents.errors.required">A question is required</span>
+      <span *ngIf = "question_contents.errors.minlength">Your question must be at least 10 characters long.</span>
+    </span>
+    <br>
+    <label>Description(optional)</label> 
+    <textarea 
+      type="text" 
+      name="option1" 
+      maxlength="200"
+      [(ngModel)]="new_question.option1.text"
+      #option1s='ngModel'
+    ></textarea>
+    <br>
+    <button [routerLink]="['/']">Cancel</button>
+    <input [disabled]="formData.invalid" type="submit" value='Submit'>
+  </form>
+</div>

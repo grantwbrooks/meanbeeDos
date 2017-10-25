@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
   new_question = new Question();
 
   //used for delete
-  loggedUserName
+  loggedUserName;
 
 
 
@@ -31,21 +31,21 @@ export class DashboardComponent implements OnInit {
     this.loggedUserName = this._apiService.getUser();
   }
 
-  onUserSubmit(){
-    console.log("before this note",this.new_item);
-    this._apiService.createItem(this.new_item, (res) => { //callback is here
-      this._apiService.setUser(res.item_content);
-      this.loggedUserName = res.item_content;
-      console.log(this.new_item);
-      this.router.navigate(["/dashboard"]) /////****** important to put in the callback function so it is called after data load */
-    },() => { //errorback function this is the second parameter of retrieveTasks
-      console.log("error something");
-    });
-    console.log("this note",this.new_item);
-    this.new_item = new Item();
-    console.log("cleared this note",this.new_item);
+  // onUserSubmit(){
+  //   console.log("before this note",this.new_item);
+  //   this._apiService.createItem(this.new_item, (res) => { //callback is here
+  //     this._apiService.setUser(res.item_content);
+  //     this.loggedUserName = res.item_content;
+  //     console.log(this.new_item);
+  //     this.router.navigate(["/dashboard"]) /////****** important to put in the callback function so it is called after data load */
+  //   },() => { //errorback function this is the second parameter of retrieveTasks
+  //     console.log("error something");
+  //   });
+  //   console.log("this note",this.new_item);
+  //   this.new_item = new Item();
+  //   console.log("cleared this note",this.new_item);
     
-  } 
+  // } 
 
 
 
@@ -74,17 +74,17 @@ export class DashboardComponent implements OnInit {
 
 
 
-  onQuestionSubmit(){
-    console.log("before this note",this.new_question);
+  // onQuestionSubmit(){
+  //   console.log("before this note",this.new_question);
     
-    this._apiService.createSub(this.new_question, (res) => {
-      this.router.navigate(["/dashboard"]);
-      this.show();  // threw this in there to refresh data since all on one page.
-      console.log("in on submit callback",this.new_question);
-    },() => {
-      console.log("error something");
-    });
-  }
+  //   this._apiService.createSub(this.new_question, (res) => {
+  //     this.router.navigate(["/dashboard"]);
+  //     this.show();  // threw this in there to refresh data since all on one page.
+  //     console.log("in on submit callback",this.new_question);
+  //   },() => {
+  //     console.log("error something");
+  //   });
+  // }
 
     
 

@@ -10,7 +10,10 @@ import { HttpModule } from '@angular/http'; // <-- Import HttpModule
 import { ApiService } from './api.service';
 import { OrderByPipe } from './order-by.pipe';
 import { FilterPipe } from './filter.pipe';
-import { UpdateComponent } from './update/update.component'; // <-- Imported
+import { UpdateComponent } from './update/update.component';
+import { LoginComponent } from './login/login.component';
+import { VoteComponent } from './vote/vote.component';
+import { NewquestionComponent } from './newquestion/newquestion.component'; // <-- Imported
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { UpdateComponent } from './update/update.component'; // <-- Imported
     DashboardComponent,
     OrderByPipe,
     FilterPipe,
-    UpdateComponent
+    UpdateComponent,
+    LoginComponent,
+    VoteComponent,
+    NewquestionComponent
   ],
   imports: [
     BrowserModule,

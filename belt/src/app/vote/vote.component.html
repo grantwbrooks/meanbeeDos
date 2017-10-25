@@ -1,0 +1,21 @@
+<a [routerLink]="['/']">Home</a> |  <a [routerLink]="['/question',new_question._id,'new_answer']">Answer this Question</a>  <a href="/logout">Logout</a>
+
+<div><h4>{{new_question.question_content}}</h4></div>
+<div><h5>{{new_question.option1}}</h5></div>
+
+<div class="container">
+  <table>
+    <thead>
+    </thead>
+    <tbody>
+      <tr *ngFor="let answer of new_question.answers | orderBy : count">
+        <td>{{answer.name}}:<br>
+          {{answer.content}}<br>
+          {{answer.desc}}
+        </td>
+        <td>{{answer.count}} likes</td>
+        <td><button (click)="vote(answer)">Like!</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,4 +1,4 @@
-<h1>Create User/Item</h1>
+<!-- <h1>Create User/Item</h1>
 <div>
   <form (submit)="onUserSubmit(); formData.reset()" class="my-form" #loginFormData='ngForm'>
     <label>Your Name:</label> 
@@ -17,44 +17,37 @@
     </span>
     <input [disabled]="loginFormData.invalid" type="submit" value='Create User/Item'>
   </form>
-</div>
+</div> -->
 
 
-<hr><hr>
+<div><h1>Hi {{loggedUserName}}!</h1></div>
+<div><a [routerLink]="['/new_question']">Add a Question</a>  <a href="/logout">Logout</a></div>
 
 
-
-<div><a [routerLink]="['/create']">Create a New Poll</a>  <a href="/logout">Logout</a></div>
-<div><h5>Current Q's:</h5></div>
-
-<input [(ngModel)]="searchText" placeholder="enter search text here">
+Search:<input [(ngModel)]="searchText" placeholder="enter search text here">
 
 <div class="container">
   <table>
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Survey Question</th>
-        <th>Date Posted</th>
+        <th>Question</th>
+        <th>Answers</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let question of questions | filter : searchText">
-        <td>{{question.name}}</td>
-        <td><a [routerLink]="['/update',question._id]">{{question.question_content}}</a></td>
-        <td>{{question.createdAt | date:'medium'}}</td>
-        <td *ngIf = 'question.name == loggedUserName'><button (click)="delete(question)">Delete</button></td>
+        <td>{{question.question_content}}</td>
+        <td>{{question.answers.length}}</td>
+        <td><a [routerLink]="['/question',question._id]">Show</a>  <a [routerLink]="['/question',question._id,'new_answer']">Answer</a></td>
         <!-- <td>{{question | json}}</td> -->
       </tr>
     </tbody>
   </table>
 </div>
 
-<hr><hr>
 
-
-<div><h5>Put the question and options here:</h5></div>
+<!-- <div><h5>Put the question and options here:</h5></div>
 <div>
   <form (submit)="onQuestionSubmit(); formData.reset()" class="my-form" #formData='ngForm'>
     <label>Question:</label> 
@@ -135,4 +128,4 @@
 
     <input [disabled]="formData.invalid" type="submit" value='Create Poll'>
   </form>
-</div>
+</div> -->
