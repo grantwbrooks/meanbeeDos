@@ -26,9 +26,14 @@ export class DashboardComponent implements OnInit {
   constructor(private _apiService: ApiService, private router: Router) { }
   
   ngOnInit() {
-    this.show();
-    //used for delete need user name to display it or not
-    this.loggedUserName = this._apiService.getUser();
+    if(this._apiService.loggedUserName == null){
+      this.router.navigate(["/login"])
+    }
+    else {
+      this.show();
+      //used for delete need user name to display it or not
+      this.loggedUserName = this._apiService.getUser();
+    }
   }
 
   // onUserSubmit(){

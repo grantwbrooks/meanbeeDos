@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'dashboard', pathMatch: 'full', component: DashboardComponent },
   { path: 'question/:id/new_answer', component: UpdateComponent },
   { path: 'create', component: DashboardComponent },
-  { path: 'index', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'new_question', component: NewquestionComponent },
   { path: 'question/:id', component: VoteComponent },
   // { path: 'logout', pathMatch: 'full', redirectTo: '/' },
